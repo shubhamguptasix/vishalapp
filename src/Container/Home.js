@@ -13,6 +13,16 @@ const Item = styled(Paper)(({ theme }) => ({
   }));
 
 const Home = (props) => {
+
+
+
+const handleFirstName=(event)=>{
+  
+  console.log("First Name>>>",event.target.value)
+}
+const handleLastName=(event)=>{
+  console.log("Last Name>>>",event.target.value)
+}
   return (
     <div style={{background:"#ddd"}}>
     <Box sx={{ flexGrow: 1,marginTop:10}}>
@@ -20,10 +30,16 @@ const Home = (props) => {
       <Grid item xs={6}>
      <CustomInput
      label="First Name"
+     variant="standard"
+     onChange={(event)=>handleFirstName(event)}
      />
       </Grid>
       <Grid item xs={6}>
-        <Item>xs=4</Item>
+      <CustomInput
+     label="Last Name"
+     variant="standard"
+     onChange={(event)=>handleLastName(event)}
+     />
       </Grid>
       <Grid item xs={6}>
         <Item>xs=4</Item>
