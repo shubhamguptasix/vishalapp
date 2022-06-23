@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 
 const CustomInput = (props) => {
 
-    const {label,variant,onChange}=props
+    const {label,variant,onChange,value}=props
   return (
     <Box
     component="form"
@@ -15,6 +15,7 @@ const CustomInput = (props) => {
     autoComplete="off"
   >
     <TextField id="outlined-basic" label={label} variant={variant} onChange={onChange}/>
+   
    
   </Box>
   )

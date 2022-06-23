@@ -1,29 +1,23 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Radio from '@mui/material/Radio';
 
-export default function RadioButtons() {
-  const [selectedValue, setSelectedValue] = useState('a');
+const CustomRadio=(props)=> {
+//   const [selectedValue, setSelectedValue] = useState('a');
 
-  const handleChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
-
+ 
+const {label,checked,value,onChange}=props
   return (
     <div>
       <Radio
-        checked={selectedValue === 'a'}
-        onChange={handleChange}
-        value="a"
+        checked={checked}
+        onChange={onChange}
+        value={value}
         name="radio-buttons"
         inputProps={{ 'aria-label': 'A' }}
       />
-      <Radio
-        checked={selectedValue === 'b'}
-        onChange={handleChange}
-        value="b"
-        name="radio-buttons"
-        inputProps={{ 'aria-label': 'B' }}
-      />
+       <span>{label}</span>
+      
     </div>
   );
 }
+export default CustomRadio
